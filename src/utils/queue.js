@@ -7,23 +7,6 @@ class Producer {
       'metadata.broker.list': config.get('kafka.host')
     });
 
-    producer.on("ready", (info) => {
-      console.info(`Producer ready: ${JSON.stringify(info)}`);
-    });
-
-    producer.on("delivery-report", (err, report) => {
-      console.info(`Producer delivery-report: ${JSON.stringify(report)}`);
-    });
-    producer.on("disconnected", (args) => {
-      console.warn(`Producer disconnected: ${JSON.stringify(args)}`);
-    });
-    producer.on("event.log", (lg) => {
-      console.info(`Producer log: ${JSON.stringify(lg)}`);
-    });
-    producer.on("event.error", (err) => {
-      console.error(`Producer error: ${err}`);
-    });
-
     this.producer = producer;
   }
 

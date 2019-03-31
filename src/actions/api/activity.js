@@ -1,6 +1,6 @@
 const Queue = require('../../utils/queue');
 
-function activity(req, res, next) {
+function activity(req, res) {
   const topic = 'Activity';
 
   try {
@@ -8,8 +8,7 @@ function activity(req, res, next) {
 
     producer.connect();
 
-    producer.on("ready", (info) => {
-      console.info(`Overwrite Producer ready: ${JSON.stringify(info)}`);
+    producer.on('ready', () => {
       producer.produce(topic, null, Buffer.from(JSON.stringify(req.body.data)));
     });
 

@@ -2,8 +2,11 @@ module.exports = function () {
   return {
     files: [
       'src/**/*.js',
+      'routes/**/*.js',
+      'views/**/*.pug',
       'config/**/*.json',
-      'jest.config.js'
+      'jest.config.js',
+      'app.js'
     ],
 
     tests: [

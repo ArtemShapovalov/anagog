@@ -1,10 +1,9 @@
-function getRandRange(from, to, fixed) {
-  Math.random() /*?*/
-  return +(Math.random() * (to - from) + from).toFixed(fixed);
+function getRandRange(from, to, fixed = 0) {
+  return (Math.random() * (to - from) + from).toFixed(fixed);
 }
 
 function getRandArray(array) {
-  return array[getRandRange(0, array.length-1, 0)];
+  return array[getRandRange(0, array.length-1)];
 }
 
 function getRandLongitude() {
@@ -16,12 +15,12 @@ function getRandLatitude() {
 }
 
 function getPoiId() {
-  return getRandRange(0, Number.MAX_SAFE_INTEGER, 0);
+  return getRandRange(0, Number.MAX_SAFE_INTEGER);
 }
 
 function getAlgorithmType() {
   const algorithmTypes = Array.from(Array(7), (_, k) => k + 1);
-  return getRandArray(algorithmTypes)
+  return getRandArray(algorithmTypes);
 }
 
 function getActivityType() {

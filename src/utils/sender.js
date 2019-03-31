@@ -25,7 +25,7 @@ class Sender {
   }
 
   send(endpoint, data = {}) {
-    http.post(endpoint, data)
+    http.post(endpoint, data);
   }
 
   run() {
@@ -44,7 +44,7 @@ class Sender {
         if (value.activity) {
           this.send('/api/activity/v1/', { data: value.activity });
         }
-      }, this.options.interval)
+      }, this.options.interval);
     });
   }
 }

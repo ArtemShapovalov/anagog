@@ -13,7 +13,7 @@ const getDailyReport = function({ userId }) {
 
   for (const step of gen ) {
     if (!result[index]) {
-      result[index] = {visit: [], activity: []}
+      result[index] = { visit: [], activity: [] };
     }
 
     result[index].visit.push(step.visit);
@@ -34,7 +34,7 @@ function view(req, res) {
 
   for (let i=0; i < usersCount; i++) {
     const client = getDailyReport({ userId: uuid.v4() });
-    clients.push(client)
+    clients.push(client);
   }
 
   const sender = new Sender(clients, {});

@@ -22,7 +22,6 @@ class DecoupledDataCollector {
         this.consumer.subscribe([this.topic]);
 
         setInterval(() => {
-          console.log('consume');
           this.swapDataToFile();
           this.consumer.consume(this.options.messageCount);
         }, this.options.interval);

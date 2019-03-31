@@ -1,6 +1,6 @@
 const Queue = require('../../utils/queue');
 
-function visit(req, res, next) {
+function visit(req, res) {
   const topic = 'Visit';
 
   try {
@@ -8,8 +8,7 @@ function visit(req, res, next) {
 
     producer.connect();
 
-    producer.on("ready", (info) => {
-      console.info(`Overwrite Producer ready: ${JSON.stringify(info)}`);
+    producer.on('ready', () => {
       producer.produce(topic, null, Buffer.from(JSON.stringify(req.body.data)));
     });
 

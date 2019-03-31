@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "ddc": "node ./bin/decoupledDataCollector.js"
+    "ddc": "node ./bin/decoupledDataCollector.js",
+    "test": "NODE_ENV=test jest"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -21,8 +22,10 @@
     "zlib": "^1.0.5"
   },
   "devDependencies": {
+    "eslint": "^5.16.0",
     "jest": "^24.5.0",
     "jest-mock-random": "^1.0.2",
-    "rewire": "^4.0.1"
+    "rewire": "^4.0.1",
+    "supertest": "^4.0.2"
   }
 }

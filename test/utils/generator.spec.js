@@ -1,14 +1,14 @@
 const uuid = require('uuid');
 const Generator = require('../../src/utils/generator');
 
-describe('genarate test data', function() {
+describe('generating test data', function() {
   let gen = null;
 
   beforeEach(() => {
     gen = new Generator({ userId: uuid.v4() }).getData();
   });
 
-  it('adds 1 + 2 to equal 3', function() {
+  it('test report', function() {
     let step = gen.next().value;
 
     expect(step.visit).toMatchObject({ EnterTime: 1553558400000, ExitTime: 1553560800000 }); // Tuesday, 26 March 2019 г., 0:00:00 - 0:40:00
